@@ -1,4 +1,18 @@
+import { AdvancedImage } from '@cloudinary/react';
+import { cld } from '../lib/cloudinary';
+import { fill } from "@cloudinary/url-gen/actions/resize";
+
 const Home = () => {
+
+    // Ejemplo de cómo cargar una imagen (comentado porque necesitamos un public_id real)
+    // const img = cld.image('sample'); // Reemplaza 'sample' por tu public_id
+    // img.resize(fill().width(400).height(300)); en caso de que vayas a indicar especificaciones
+
+    const img = cld.image('Captura_de_pantalla_2026-01-28_234017_fk0xqe');
+    img.resize(fill().width(400).height(300)); // Ejemplo suali
+
+    // Luego implementa <AdvancedImage cldImg={img} /> para poner la imagen en el html
+
     return (
         <section className="p-8 flex-1 bg-gray-900">
             <div className="max-w-7xl mx-auto">
