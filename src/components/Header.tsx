@@ -15,9 +15,19 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/about" className="text-white no-underline text-base transition-colors duration-300 hover:text-cyan-400">
-                                Acerca de
+                            <Link to="/noticias" className="text-white no-underline text-base transition-colors duration-300 hover:text-cyan-400">
+                                Noticias
                             </Link>
+                        </li>
+                        <li>
+                            <Link to="/galeria" className="text-white no-underline text-base transition-colors duration-300 hover:text-cyan-400">
+                                Galería
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="#" className="text-white no-underline text-base transition-colors duration-300 hover:text-cyan-400">
+                                Contacto
+                            </a>
                         </li>
                     </ul>
                 </nav>
