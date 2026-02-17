@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+
+@theme {
+    --font-racing: "Racing Sans One", serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+    body {
+        background-color: #f7f8f9;
+        font-family: var(--font-poppins);
+        color: #1a1a1a;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-racing);
+        text-transform: uppercase;
+    }
+
+    p,
+    small {
+        font-family: var(--font-poppins);
+    }
+
+    button {
+        background-color: #FE7021;
+        border-radius: 15px;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s linear;
+    }
+
+    button:hover {
+        background-color: #FFCB9D;
+    }
+
+    input {
+        border: 1px solid #FE7021;
+        background-color: #D7D9DA;
+        padding: 0.5rem;
+        border-radius: 4px;
+        color: black;
+    }
+
+    input::placeholder {
+        color: black;
+        opacity: 1;
+    }
+}
