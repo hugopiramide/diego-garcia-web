@@ -7,6 +7,8 @@ const championships = [
     {
         id: 'copa-piston',
         name: 'Copa Pistón',
+        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
+        date: 'Marzo 2026',
         images: [
             'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
             'Diego_Ceax_Talavera_Series081A3210_rppmuk',
@@ -19,6 +21,8 @@ const championships = [
     {
         id: 'campeonato-sheyla',
         name: 'Copa Sheyla',
+        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
+        date: 'Abril 2026',
         images: [
             'Diego_Ceax_Talavera_Series_K9A3367_sndeel',
             '_MG_1748_obensb',
@@ -28,6 +32,8 @@ const championships = [
     {
         id: 'ceax-talavera',
         name: 'CEAX Talavera',
+        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
+        date: 'Mayo 2026',
         images: [
             '32RIANXO-G-162_vpziv9',
             'Diego_Ceax_Talavera_Series_K9A4402_wcston',
@@ -37,6 +43,8 @@ const championships = [
     {
         id: 'trofeo-rianxo',
         name: 'Trofeo Rianxo',
+        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
+        date: 'Junio 2026',
         images: [
             '_K9A3324_b3qxgl',
             'Diego_Ceax_Talavera_Series081A3210_rppmuk',
@@ -50,34 +58,51 @@ const Galeria = () => {
 
     return (
         <section className="flex-1 flex flex-col items-center">
-            <div className="w-full aspect-video md:h-[95vh] overflow-hidden bg-black flex items-center justify-center">
+            <div className="w-full aspect-video md:h-[95vh] overflow-hidden bg-black flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+
                 <video
                     className="w-min-full w-full h-full object-cover"
                     autoPlay
                     loop
                     muted
                     playsInline
-                    poster="https://res.cloudinary.com/demo/image/upload/sample.jpg"
                 >
-                    <source src="https://res.cloudinary.com/demo/video/upload/c_fill,h_720,w_1280/dog.mp4" type="video/mp4" />
+                    <source src={cld.video('Video_Project_1_t9ogno').toURL()} type="video/mp4" />
                     Tu navegador no soporta el elemento de video.
                 </video>
             </div>
 
             <div className="w-full max-w-7xl px-8 py-12 flex flex-col gap-12">
-                <div className="flex flex-wrap justify-center gap-4 border-b border-gray-100 pb-8">
-                    {championships.map((championship) => (
-                        <button
-                            key={championship.id}
-                            onClick={() => setSelectedChampionship(championship)}
-                            className={`px-6 py-2 rounded-full transition-all duration-300 font-medium ${selectedChampionship.id === championship.id
-                                ? 'bg-orange-500 text-white shadow-md scale-105'
-                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                }`}
-                        >
-                            {championship.name}
-                        </button>
-                    ))}
+                <div className="flex flex-wrap justify-center gap-8 border-b border-gray-100 pb-12">
+                    {championships.map((championship) => {
+                        const trophy = cld.image(championship.trophyImg);
+                        trophy.resize(fill().width(100).height(100));
+
+                        return (
+                            <button
+                                key={championship.id}
+                                onClick={() => {
+                                    setSelectedChampionship(championship);
+                                }}
+                                className={`flex flex-col items-center gap-3 p-6 rounded-2xl transition-all duration-300 ${selectedChampionship.id === championship.id
+                                    ? 'bg-orange-500 text-white shadow-xl scale-110'
+                                    : 'bg-white text-black hover:bg-gray-50 border border-gray-100 hover:border-orange-200'
+                                    }`}
+                            >
+                                <div className={`p-2 rounded-full ${selectedChampionship.id === championship.id ? 'bg-white/20' : 'bg-gray-100'}`}>
+                                    <AdvancedImage cldImg={trophy} className="w-12 h-12 object-contain" />
+                                </div>
+                                <div className="flex flex-col items-center">
+                                    <span className=" text-lg">{championship.name}</span>
+                                    <span className={`text-xs tracking-widest mt-1 ${selectedChampionship.id === championship.id ? 'text-white/80' : ''
+                                        }`}>
+                                        {championship.date}
+                                    </span>
+                                </div>
+                            </button>
+                        );
+                    })}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
