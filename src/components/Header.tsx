@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="bg-white border-b border-gray-200">
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
                 <div>
                     <h1 className="text-2xl font-bold"><span className="stylized-name">Diego García</span></h1>
