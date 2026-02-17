@@ -51,4 +51,10 @@
         color: black;
         opacity: 1;
     }
+
+    .stylized-name {
+        color: #FE7021;
+        -webkit-text-stroke: 1px black;
+        paint-order: stroke fill;
+    }
 }
