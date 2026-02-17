@@ -11,25 +11,26 @@ const Header = () => {
                 <nav>
                     <ul className="flex gap-8 list-none m-0 p-0">
                         <li>
-                            <Link to="/" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-blue-600">
+                            <Link to="/" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-[#FE7021]">
                                 Inicio
                             </Link>
                         </li>
                         <li>
-                            <Link to="/noticias" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-blue-600">
+                            <Link to="/noticias" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-[#FE7021]">
                                 Noticias
                             </Link>
                         </li>
                         <li>
-                            <Link to="/galeria" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-blue-600">
+                            <Link to="/galeria" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-[#FE7021]">
                                 Galería
                             </Link>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-blue-600">
+                            <a href="#" className="text-gray-700 no-underline text-base transition-colors duration-300 hover:text-[#FE7021]">
                                 Contacto
                             </a>
                         </li>
+
                     </ul>
                 </nav>
             </div>
