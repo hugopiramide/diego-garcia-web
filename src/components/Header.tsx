@@ -5,7 +5,8 @@ const Header = () => {
         <header className="bg-white border-b border-gray-200">
             <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
                 <div>
-                    <h1 className="text-2xl font-bold">Diego García</h1>
+                    <h1 className="text-2xl font-bold"><span className="stylized-name">Diego García</span></h1>
+
                 </div>
                 <nav>
                     <ul className="flex gap-8 list-none m-0 p-0">
