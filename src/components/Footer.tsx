@@ -17,15 +17,15 @@ const Footer = () => {
     return (
         <footer className="bg-[#f7f8f9] pb-12 mt-auto border-t border-gray-100 overflow-hidden">
             <div className="max-w-7xl mx-auto px-8">
-                
+
                 {/* CARRUSEL */}
                 <div className="relative mb-16">
                     <div className="flex overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
                         <div className="animate-infinite-scroll flex items-center gap-20 grayscale">
                             {doubleImages.map((image, index) => (
                                 <div key={index} className="shrink-0 flex justify-center">
-                                    <AdvancedImage 
-                                        cldImg={image} 
+                                    <AdvancedImage
+                                        cldImg={image}
                                         className="h-auto w-auto object-contain"
                                     />
                                 </div>
