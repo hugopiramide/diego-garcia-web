@@ -79,38 +79,41 @@ const Galeria = () => {
             </div>
 
             <div className="w-full max-w-7xl px-8 py-12 flex flex-col gap-12">
-                <div className="flex flex-wrap justify-center gap-8 border-b border-gray-100 pb-12">
-                    {championships.map((championship) => {
-                        const isSelected = selectedChampionship.id === championship.id;
-                        const trophyImgId = isSelected ? 'whiteTrophy_up7tb4' : 'blackTrophy_xv4sxg';
-                        const trophy = cld.image(trophyImgId);
-                        trophy.resize(fill().width(100).height(100));
+                <nav className="border-b border-gray-100 pb-12" aria-label="Selección de campeonato">
+                    <ul className="flex flex-wrap justify-center gap-8 list-none m-0 p-0">
+                        {championships.map((championship) => {
+                            const isSelected = selectedChampionship.id === championship.id;
+                            const trophyImgId = isSelected ? 'whiteTrophy_up7tb4' : 'blackTrophy_xv4sxg';
+                            const trophy = cld.image(trophyImgId);
+                            trophy.resize(fill().width(100).height(100));
 
-                        return (
-                            <button
-                                key={championship.id}
-                                onClick={() => {
-                                    setSelectedChampionship(championship);
-                                }}
-                                className={`flex flex-col items-center gap-3 p-6 rounded-2xl transition-all duration-300 ${isSelected
-                                    ? 'bg-orange-500 text-white shadow-xl scale-110'
-                                    : 'bg-white text-black hover:bg-gray-50 border border-gray-100 hover:border-orange-200'
-                                    }`}
-                            >
-                                <div className={`p-2 ${isSelected ? '' : ''}`}>
-                                    <AdvancedImage cldImg={trophy} className="w-12 h-12 object-contain" />
-                                </div>
-                                <div className="flex flex-col items-center">
-                                    <span className=" text-lg">{championship.name}</span>
-                                    <span className={`text-xs tracking-widest mt-1 ${isSelected ? 'text-white/80' : ''
-                                        }`}>
-                                        {championship.date}
-                                    </span>
-                                </div>
-                            </button>
-                        );
-                    })}
-                </div>
+                            return (
+                                <li key={championship.id}>
+                                    <button
+                                        onClick={() => {
+                                            setSelectedChampionship(championship);
+                                        }}
+                                        className={`flex flex-col items-center gap-3 p-6 rounded-2xl transition-all duration-300 ${isSelected
+                                            ? 'bg-orange-500 text-white shadow-xl scale-110'
+                                            : 'bg-white text-black hover:bg-gray-50 border border-gray-100 hover:border-orange-200'
+                                            }`}
+                                        aria-pressed={isSelected}
+                                    >
+                                        <div className="p-2">
+                                            <AdvancedImage cldImg={trophy} className="w-12 h-12 object-contain" />
+                                        </div>
+                                        <div className="flex flex-col items-center text-center">
+                                            <span className="text-lg font-medium">{championship.name}</span>
+                                            <span className={`text-xs tracking-widest mt-1 ${isSelected ? 'text-white/80' : 'text-gray-500'}`}>
+                                                {championship.date}
+                                            </span>
+                                        </div>
+                                    </button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </nav>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {selectedChampionship.images.map((imgId, index) => {

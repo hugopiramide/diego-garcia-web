@@ -53,7 +53,7 @@ const Home: React.FC = () => {
     const prevMonth = () => setCurrentDate(subMonths(currentDate, 1));
 
     return (
-        <main className="w-full overflow-x-hidden">
+        <div className="w-full overflow-x-hidden">
 
             {/* QUIÉN SOY */}
             <section className="relative bg-black text-white py-12 md:py-24 px-4 md:px-10 lg:px-20 overflow-hidden">
@@ -141,7 +141,4 @@ const Home: React.FC = () => {
                 </div>
             </section>
         </main>
-    );
-};
-
-export default Home;
+        </div >
