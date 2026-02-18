@@ -2,16 +2,16 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { cld } from '../lib/cloudinary';
 import { fill } from "@cloudinary/url-gen/actions/resize";
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react';
-import { 
-    format, 
-    addMonths, 
-    subMonths, 
-    startOfMonth, 
-    endOfMonth, 
-    startOfWeek, 
-    endOfWeek, 
-    eachDayOfInterval, 
-    isSameMonth 
+import {
+    format,
+    addMonths,
+    subMonths,
+    startOfMonth,
+    endOfMonth,
+    startOfWeek,
+    endOfWeek,
+    eachDayOfInterval,
+    isSameMonth
 } from 'date-fns';
 import { es } from 'date-fns/locale';
 
@@ -54,16 +54,16 @@ const Home: React.FC = () => {
 
     return (
         <main className="w-full overflow-x-hidden">
-        
+
             {/* QUIÉN SOY */}
             <section className="relative bg-black text-white py-12 md:py-24 px-4 md:px-10 lg:px-20 overflow-hidden">
                 <div className="absolute inset-0 z-0 opacity-40">
-                    <AdvancedVideo 
-                        cldVid={videoHome} 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline 
+                    <AdvancedVideo
+                        cldVid={videoHome}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full h-full object-cover opacity-30"
                     />
                 </div>
@@ -86,17 +86,17 @@ const Home: React.FC = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
                     <h2 className="text-3xl md:text-3xl italic">Calendario</h2>
                     <div className="flex items-center gap-2 bg-white p-1 rounded-xl shadow-sm border border-gray-200 w-full sm:w-auto justify-between">
-                        <button onClick={prevMonth} className="bg-gray-100! text-black! px-4! py-2! hover:bg-[#FE7021]! hover:text-white! transition-all cursor-pointer">&lt;</button>
-                        <span className="font-bold text-sm md:text-base min-w-30 text-center capitalize">
+                        <button onClick={prevMonth} className="bg-gray-100! text-black! px-4! py-2! hover:bg-[#FE7021]! hover:text-white! transition-all cursor-pointer" aria-label="Mes anterior">&lt;</button>
+                        <span className="font-bold text-sm md:text-base min-w-30 text-center capitalize" aria-live="polite">
                             {format(currentDate, 'MMMM yyyy', { locale: es })}
                         </span>
-                        <button onClick={nextMonth} className="bg-gray-100! text-black! px-4! py-2! hover:bg-[#FE7021]! hover:text-white! transition-all cursor-pointer">&gt;</button>
+                        <button onClick={nextMonth} className="bg-gray-100! text-black! px-4! py-2! hover:bg-[#FE7021]! hover:text-white! transition-all cursor-pointer" aria-label="Mes siguiente">&gt;</button>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-4 hidden lg:block">
-                        <AdvancedImage cldImg={img2} className="w-full h-full object-cover rounded-sm shadow-md min-h-100"/>
+                        <AdvancedImage cldImg={img2} className="w-full h-full object-cover rounded-sm shadow-md min-h-100" />
                     </div>
                     <div className="lg:col-span-8 w-full flex flex-col justify-center overflow-x-auto pb-4 custom-scrollbar">
                         <div className="min-w-150 shadow-lg border border-gray-300 rounded-lg overflow-hidden h-fit">

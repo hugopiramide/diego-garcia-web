@@ -40,7 +40,7 @@ const Header = () => {
                 <button
                     className="md:hidden text-black z-50 bg-white"
                     onClick={toggleMenu}
-                    aria-label="Abrir menú"
+                    aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
                 >
                     {isOpen ? <X size={30} /> : <Menu size={30} />}
                 </button>
