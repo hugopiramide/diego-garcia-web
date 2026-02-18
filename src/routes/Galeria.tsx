@@ -7,11 +7,10 @@ const championships = [
     {
         id: 'copa-piston',
         name: 'Copa Pistón',
-        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
         date: 'Marzo 2026',
         images: [
-            'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
-            'Diego_Ceax_Talavera_Series081A3210_rppmuk',
+            '_MG_2788_emwfac',
+            '_MG_2168_mrk6zk',
             '_MG_1611_cmpetq',
             'Diego_Ceax_Talavera_Series_K9A3367_sndeel',
             '_MG_1748_obensb',
@@ -21,34 +20,40 @@ const championships = [
     {
         id: 'campeonato-sheyla',
         name: 'Copa Sheyla',
-        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
         date: 'Abril 2026',
         images: [
             'Diego_Ceax_Talavera_Series_K9A3367_sndeel',
             '_MG_1748_obensb',
-            '_K9A3324_b3qxgl'
+            '_K9A3324_b3qxgl',
+            'Diego_Ceax_Talavera_Series_K9A1301_znhgka',
+            'Diego_Ceax_Talavera_Series_K9A4108_vafnvl',
+            '13_ArteixoFGAJunio25_600_wijcjo'
         ]
     },
     {
         id: 'ceax-talavera',
         name: 'CEAX Talavera',
-        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
         date: 'Mayo 2026',
         images: [
             '32RIANXO-G-162_vpziv9',
             'Diego_Ceax_Talavera_Series_K9A4402_wcston',
-            'Captura_de_pantalla_2026-01-28_234017_fk0xqe'
+            'Diego_Ceax_Talavera_Series_K9A4293_d7wqpv',
+            '13_ArteixoFGAJunio25_501_zva99p',
+            'CCTrophy-24_6_sonkxh',
+            'image00004_rkhffm'
         ]
     },
     {
         id: 'trofeo-rianxo',
         name: 'Trofeo Rianxo',
-        trophyImg: 'Captura_de_pantalla_2026-01-28_234017_fk0xqe',
         date: 'Junio 2026',
         images: [
             '_K9A3324_b3qxgl',
-            'Diego_Ceax_Talavera_Series081A3210_rppmuk',
-            '_MG_1748_obensb'
+            'Diego_Ceax_Talavera_Series_K9A4340_qzuu6z',
+            '_MG_1748_obensb',
+            '_MG_1750_xsqmnt',
+            'CCTrophy-24_7_ry9icm',
+            'CCTrophy-24_5_e0c58p'
         ]
     }
 ];
@@ -76,7 +81,9 @@ const Galeria = () => {
             <div className="w-full max-w-7xl px-8 py-12 flex flex-col gap-12">
                 <div className="flex flex-wrap justify-center gap-8 border-b border-gray-100 pb-12">
                     {championships.map((championship) => {
-                        const trophy = cld.image(championship.trophyImg);
+                        const isSelected = selectedChampionship.id === championship.id;
+                        const trophyImgId = isSelected ? 'whiteTrophy_up7tb4' : 'blackTrophy_xv4sxg';
+                        const trophy = cld.image(trophyImgId);
                         trophy.resize(fill().width(100).height(100));
 
                         return (
@@ -85,17 +92,17 @@ const Galeria = () => {
                                 onClick={() => {
                                     setSelectedChampionship(championship);
                                 }}
-                                className={`flex flex-col items-center gap-3 p-6 rounded-2xl transition-all duration-300 ${selectedChampionship.id === championship.id
+                                className={`flex flex-col items-center gap-3 p-6 rounded-2xl transition-all duration-300 ${isSelected
                                     ? 'bg-orange-500 text-white shadow-xl scale-110'
                                     : 'bg-white text-black hover:bg-gray-50 border border-gray-100 hover:border-orange-200'
                                     }`}
                             >
-                                <div className={`p-2 rounded-full ${selectedChampionship.id === championship.id ? 'bg-white/20' : 'bg-gray-100'}`}>
+                                <div className={`p-2 ${isSelected ? '' : ''}`}>
                                     <AdvancedImage cldImg={trophy} className="w-12 h-12 object-contain" />
                                 </div>
                                 <div className="flex flex-col items-center">
                                     <span className=" text-lg">{championship.name}</span>
-                                    <span className={`text-xs tracking-widest mt-1 ${selectedChampionship.id === championship.id ? 'text-white/80' : ''
+                                    <span className={`text-xs tracking-widest mt-1 ${isSelected ? 'text-white/80' : ''
                                         }`}>
                                         {championship.date}
                                     </span>
