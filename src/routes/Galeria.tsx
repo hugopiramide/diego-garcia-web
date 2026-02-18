@@ -57,12 +57,17 @@ const championships = [
         ]
     }
 ];
+import SEO from '../components/SEO';
 
 const Galeria = () => {
     const [selectedChampionship, setSelectedChampionship] = useState(championships[0]);
 
     return (
         <section className="flex-1 flex flex-col items-center">
+            <SEO
+                title="Galería"
+                description="Explora las mejores imágenes y videos de Diego García en competiciones como la Copa Pistón, Copa Sheyla, CEAX Talavera y más."
+            />
             <div className="w-full aspect-video md:h-[95vh] overflow-hidden bg-black flex items-center justify-center relative">
                 <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
 

@@ -1,6 +1,7 @@
 import { AdvancedImage } from '@cloudinary/react';
 import { cld } from '../lib/cloudinary';
 import { fill } from "@cloudinary/url-gen/actions/resize";
+import SEO from '../components/SEO';
 
 const Noticias = () => {
 
@@ -27,6 +28,10 @@ const Noticias = () => {
 
     return (
         <section className="p-8 flex-1">
+            <SEO
+                title="Noticias"
+                description="Últimas noticias sobre Diego García: Copa Pistón 2026, Campeonato Sheyla y más novedades del mundo del automovilismo."
+            />
             <div className="max-w-7xl mx-auto flex flex-col gap-16">
 
                 <article className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch border-b border-gray-100 pb-12">

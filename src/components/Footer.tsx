@@ -4,15 +4,15 @@ import { cld } from '../lib/cloudinary';
 import { fill } from "@cloudinary/url-gen/actions/resize";
 
 const Footer = () => {
-    const img1 = cld.image('unnamed_jieh4h').resize(fill().width(192).height(41));
-    const img2 = cld.image('marmoles_barbeito').resize(fill().width(267).height(63));
-    const img3 = cld.image('logo_rallycar2_mldx7r').resize(fill().width(161).height(65));
-    const img4 = cld.image('ramon_garcia_rfnfs3').resize(fill().width(101).height(59));
-    const img5 = cld.image('senra_sport_vhbbkv').resize(fill().width(155).height(61));
+    const sponsors = [
+        { img: cld.image('unnamed_jieh4h').resize(fill().width(192).height(41)), alt: 'Logotipo de Dimalnox' },
+        { img: cld.image('marmoles_barbeito').resize(fill().width(267).height(63)), alt: 'Logotipo de Mármoles Barbeito' },
+        { img: cld.image('logo_rallycar2_mldx7r').resize(fill().width(161).height(65)), alt: 'Logotipo de Rallycar' },
+        { img: cld.image('ramon_garcia_rfnfs3').resize(fill().width(101).height(59)), alt: 'Logotipo de Ramón García' },
+        { img: cld.image('senra_sport_vhbbkv').resize(fill().width(155).height(61)), alt: 'Logotipo de Senra Sport' },
+    ];
 
-    const cloudImages = [img1, img2, img3, img4, img5];
-
-    const doubleImages = [...cloudImages, ...cloudImages];
+    const doubleSponsors = [...sponsors, ...sponsors];
 
     return (
         <footer className="bg-[#f7f8f9] pb-12 mt-auto border-t border-gray-100 overflow-hidden">
@@ -22,10 +22,11 @@ const Footer = () => {
                 <div className="relative mb-16">
                     <div className="flex overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
                         <div className="animate-infinite-scroll flex items-center gap-20 grayscale">
-                            {doubleImages.map((image, index) => (
+                            {doubleSponsors.map((sponsor, index) => (
                                 <div key={index} className="shrink-0 flex justify-center">
                                     <AdvancedImage
-                                        cldImg={image}
+                                        cldImg={sponsor.img}
+                                        alt={sponsor.alt}
                                         className="h-auto w-auto object-contain"
                                     />
                                 </div>

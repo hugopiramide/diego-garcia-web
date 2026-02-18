@@ -14,6 +14,7 @@ import {
     isSameMonth
 } from 'date-fns';
 import { es } from 'date-fns/locale';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -54,6 +55,10 @@ const Home: React.FC = () => {
 
     return (
         <div className="w-full overflow-x-hidden">
+            <SEO
+                title="Inicio"
+                description="Conoce a Diego García Candal, piloto de automovilismo enfocado en la disciplina, el análisis técnico y la ambición constante por el podio."
+            />
 
             {/* QUIÉN SOY */}
             <section className="relative bg-black text-white py-12 md:py-24 px-4 md:px-10 lg:px-20 overflow-hidden">
