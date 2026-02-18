@@ -31,7 +31,7 @@ const Noticias = () => {
 
                 <article className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch border-b border-gray-100 pb-12">
                     <div className="overflow-hidden rounded-lg shadow-sm border border-gray-200 h-full">
-                        <AdvancedImage cldImg={img} className="w-full h-full object-cover object-top" />
+                        <AdvancedImage cldImg={img} className="w-full h-full object-cover object-top" alt="Diego García preparándose para la Copa Pistón 2026" />
                     </div>
                     <div>
                         <h2 className="text-3xl mb-4">Copa pistón</h2>
@@ -62,15 +62,15 @@ const Noticias = () => {
                             </p>
                         </div>
                         <div className="order-1 md:order-2 overflow-hidden rounded-lg shadow-sm border border-gray-200 h-full">
-                            <AdvancedImage cldImg={img2} className="w-full h-full object-cover" />
+                            <AdvancedImage cldImg={img2} className="w-full h-full object-cover" alt="Competición en el Campeonato Sheyla" />
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="order-1 md:order-2 overflow-hidden rounded-lg shadow-sm border border-gray-200">
-                            <AdvancedImage cldImg={img3} className="w-full h-auto" />
+                            <AdvancedImage cldImg={img3} className="w-full h-auto" alt="Detalle del coche de Diego García" />
                         </div>
                         <div className="order-2 md:order-1 overflow-hidden rounded-lg shadow-sm border border-gray-200">
-                            <AdvancedImage cldImg={img4} className="w-full h-auto" />
+                            <AdvancedImage cldImg={img4} className="w-full h-auto" alt="Equipo técnico trabajando en el box" />
                         </div>
                     </div>
                 </article>
@@ -91,14 +91,14 @@ const Noticias = () => {
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="overflow-hidden rounded-lg shadow-sm border border-gray-200 h-full">
-                            <AdvancedImage cldImg={img5} className="w-full h-full object-cover" />
+                            <AdvancedImage cldImg={img5} className="w-full h-full object-cover" alt="Diego García sin casco, retrato promocional" />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="overflow-hidden rounded-lg shadow-sm border border-gray-200 h-full">
-                                <AdvancedImage cldImg={img6} className="w-full h-full object-cover" />
+                                <AdvancedImage cldImg={img6} className="w-full h-full object-cover" alt="Diego en el podio celebrando una victoria" />
                             </div>
                             <div className="overflow-hidden rounded-lg shadow-sm border border-gray-200 h-full">
-                                <AdvancedImage cldImg={img7} className="w-full h-full object-cover" />
+                                <AdvancedImage cldImg={img7} className="w-full h-full object-cover" alt="Vista del circuito desde boxes" />
                             </div>
                         </div>
                     </div>

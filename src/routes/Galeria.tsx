@@ -100,7 +100,7 @@ const Galeria = () => {
                                         aria-pressed={isSelected}
                                     >
                                         <div className="p-2">
-                                            <AdvancedImage cldImg={trophy} className="w-12 h-12 object-contain" />
+                                            <AdvancedImage cldImg={trophy} className="w-12 h-12 object-contain" alt={`Trofeo de ${championship.name}`} />
                                         </div>
                                         <div className="flex flex-col items-center text-center">
                                             <span className="text-lg font-medium">{championship.name}</span>
@@ -125,6 +125,7 @@ const Galeria = () => {
                                 <AdvancedImage
                                     cldImg={img}
                                     className="w-full h-64 object-cover"
+                                    alt={`Imagen ${index + 1} del campeonato ${selectedChampionship.name}`}
                                 />
                             </div>
                         );

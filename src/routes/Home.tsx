@@ -76,7 +76,7 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                     <div className="w-full max-w-75 md:max-w-none md:w-1/3 order-1 md:order-2">
-                        <AdvancedImage cldImg={img} className="rounded-sm shadow-2xl w-full aspect-square md:aspect-auto object-cover" />
+                        <AdvancedImage cldImg={img} className="rounded-sm shadow-2xl w-full aspect-square md:aspect-auto object-cover" alt="Diego García apoyado en su casco de competición" />
                     </div>
                 </div>
             </section>
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-4 hidden lg:block">
-                        <AdvancedImage cldImg={img2} className="w-full h-full object-cover rounded-sm shadow-md min-h-100" />
+                        <AdvancedImage cldImg={img2} className="w-full h-full object-cover rounded-sm shadow-md min-h-100" alt="Diego García compitiendo en pista con su kart" />
                     </div>
                     <div className="lg:col-span-8 w-full flex flex-col justify-center overflow-x-auto pb-4 custom-scrollbar">
                         <div className="min-w-150 shadow-lg border border-gray-300 rounded-lg overflow-hidden h-fit">
@@ -123,16 +123,21 @@ const Home: React.FC = () => {
                     <h2 className="text-3xl md:text-3xl italic mb-10">Contacto</h2>
                     <form className="bg-white shadow-[0_4px_30px_rgba(0,0,0,0.05)] rounded-2xl p-6 md:p-12 border border-gray-100">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-                            {['Nombre', 'Apellidos', 'Número de teléfono', 'Correo electrónico'].map((label) => (
-                                <div key={label} className="flex flex-col">
-                                    <label className="text-[#FE7021] text-xs font-bold mb-2 ml-1 uppercase tracking-wider">{label}</label>
-                                    <input type="text" className="w-full bg-[#f8f9fa] border border-[#FE7021]/30 rounded-xl p-3 md:p-4 outline-none focus:border-[#FE7021] focus:ring-1 focus:ring-[#FE7021] transition-all" />
+                            {[
+                                { label: 'Nombre', id: 'nombre' },
+                                { label: 'Apellidos', id: 'apellidos' },
+                                { label: 'Número de teléfono', id: 'telefono' },
+                                { label: 'Correo electrónico', id: 'email' }
+                            ].map(({ label, id }) => (
+                                <div key={id} className="flex flex-col">
+                                    <label htmlFor={id} className="text-[#FE7021] text-xs font-bold mb-2 ml-1 uppercase tracking-wider">{label}</label>
+                                    <input id={id} type={id === 'email' ? 'email' : (id === 'telefono' ? 'tel' : 'text')} className="w-full bg-[#f8f9fa] border border-[#FE7021]/30 rounded-xl p-3 md:p-4 outline-none focus:border-[#FE7021] focus:ring-1 focus:ring-[#FE7021] transition-all" />
                                 </div>
                             ))}
                         </div>
                         <div className="mt-6">
-                            <label className="text-[#FE7021] text-xs font-bold mb-2 ml-1 uppercase tracking-wider">Mensaje</label>
-                            <textarea rows={5} className="w-full bg-[#f8f9fa] border border-[#FE7021]/30 rounded-xl p-4 outline-none focus:border-[#FE7021] focus:ring-1 focus:ring-[#FE7021] resize-none"></textarea>
+                            <label htmlFor="mensaje" className="text-[#FE7021] text-xs font-bold mb-2 ml-1 uppercase tracking-wider">Mensaje</label>
+                            <textarea id="mensaje" rows={5} className="w-full bg-[#f8f9fa] border border-[#FE7021]/30 rounded-xl p-4 outline-none focus:border-[#FE7021] focus:ring-1 focus:ring-[#FE7021] resize-none"></textarea>
                         </div>
                         <div className="mt-10 flex justify-center md:justify-end">
                             <button type="submit" className="w-full md:w-auto px-16! py-4! font-bold rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer">Enviar</button>
@@ -140,5 +145,8 @@ const Home: React.FC = () => {
                     </form>
                 </div>
             </section>
-        </main>
-        </div >
+        </div>
+    );
+};
+
+export default Home;
