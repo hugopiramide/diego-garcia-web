@@ -37,7 +37,7 @@ const Header = () => {
                     </h1>
                 </Link>
 
-                <button 
+                <button
                     className="md:hidden text-black z-50 bg-white"
                     onClick={toggleMenu}
                     aria-label="Abrir menú"
@@ -47,9 +47,10 @@ const Header = () => {
 
                 <nav className="hidden md:block">
                     <ul className="flex gap-10 list-none m-0 p-0">
-                        <li><Link to="/noticias" className="text-gray-400 hover:text-black transition-colors no-underline text-lg">Noticias</Link></li>
-                        <li><Link to="/galeria" className="text-gray-400 hover:text-black transition-colors no-underline text-lg">Galería</Link></li>
-                        <li><Link to="/#contacto" onClick={handleContactoClick} className="text-gray-400 hover:text-black transition-colors no-underline text-lg">Contacto</Link></li>
+                        <li><Link to="/" onClick={() => setIsOpen(false)} className={`${location.pathname === '/' ? 'text-[#FE7021]' : 'text-gray-400'} hover:text-[#FE7021] transition-colors no-underline text-lg`}>Home</Link></li>
+                        <li><Link to="/noticias" className={`${location.pathname === '/noticias' ? 'text-[#FE7021]' : 'text-gray-400'} hover:text-[#FE7021] transition-colors no-underline text-lg`}>Noticias</Link></li>
+                        <li><Link to="/galeria" className={`${location.pathname === '/galeria' ? 'text-[#FE7021]' : 'text-gray-400'} hover:text-[#FE7021] transition-colors no-underline text-lg`}>Galería</Link></li>
+                        <li><Link to="/#contacto" onClick={handleContactoClick} className={`${location.pathname === '/#contacto' ? 'text-[#FE7021]' : 'text-gray-400'} hover:text-[#FE7021] transition-colors no-underline text-lg`}>Contacto</Link></li>
                     </ul>
                 </nav>
 
@@ -60,13 +61,16 @@ const Header = () => {
                     <nav className="flex flex-col items-center justify-center h-full">
                         <ul className="flex flex-col gap-8 text-center list-none p-0">
                             <li>
-                                <Link to="/noticias" onClick={() => setIsOpen(false)} className="text-gray-600 no-underline text-2xl font-medium">Noticias</Link>
+                                <Link to="/" onClick={() => setIsOpen(false)} className={`${location.pathname === '/' ? 'text-[#FE7021]' : 'text-gray-600'} hover:text-[#FE7021] transition-colors no-underline text-2xl font-medium`}>Home</Link>
                             </li>
                             <li>
-                                <Link to="/galeria" onClick={() => setIsOpen(false)} className="text-gray-600 no-underline text-2xl font-medium">Galería</Link>
+                                <Link to="/noticias" onClick={() => setIsOpen(false)} className={`${location.pathname === '/noticias' ? 'text-[#FE7021]' : 'text-gray-600'} hover:text-[#FE7021] transition-colors no-underline text-2xl font-medium`}>Noticias</Link>
                             </li>
                             <li>
-                                <Link to="/#contacto" onClick={handleContactoClick} className="text-gray-600 no-underline text-2xl font-medium">Contacto</Link>
+                                <Link to="/galeria" onClick={() => setIsOpen(false)} className={`${location.pathname === '/galeria' ? 'text-[#FE7021]' : 'text-gray-600'} hover:text-[#FE7021] transition-colors no-underline text-2xl font-medium`}>Galería</Link>
+                            </li>
+                            <li>
+                                <Link to="/#contacto" onClick={handleContactoClick} className={`${location.pathname === '/#contacto' ? 'text-[#FE7021]' : 'text-gray-600'} hover:text-[#FE7021] transition-colors no-underline text-2xl font-medium`}>Contacto</Link>
                             </li>
                         </ul>
                     </nav>
